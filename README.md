@@ -1,3 +1,5 @@
+## NAME : VASUNDRA SRI R
+## REG NO:212222230168
 # Experiment--05-Implementation-of-flipflops-using-verilog
 ### AIM: To implement all the flipflops using verilog and validating their functionality using their functional tables
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
@@ -119,8 +121,10 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ### PROGRAM 
 ```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by:VASUNDRA SRI R 
+Developed by:VASUNDRA SRI R
 RegisterNumber:212222230168
+```
+### SR flipflop
 module flipflop(s,r,q,qbar,clk);
 input s,r,clk;
 output reg q,qbar;
@@ -133,30 +137,44 @@ qbar=r|(qbar&(~s));
 end 
 endmodule
 ```
-
-
-
-
+```
+### JK flipflop
+```
+module jkflipflop(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q;
+output reg qbar;
+always @(posedge clk)
+begin
+q=(j&(~q))|((~k)&q);
+qbar=((~j)&q)|(k &(~q));
+end 
+endmodule
+```
 
 
 ### RTL LOGIC FOR FLIPFLOPS 
-
+### SR flipflop
 
 ![Screenshot 2023-09-15 092204](https://github.com/vasundrasriravi/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393983/83f0258f-1099-4bba-82a2-4b64a188145e)
 
+### JK flipflop
+
+
+![Screenshot 2023-09-22 094703](https://github.com/vasundrasriravi/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393983/c66aae0d-9fb8-44d9-b03c-404af8ff3714)
 
 
 
+### TRUTH TABLE
+### Waveform Output
+### SR flipflop
+![Screenshot 2023-09-22 090934](https://github.com/vasundrasriravi/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393983/ff43a583-9d4b-419b-a773-da680567d58f)
 
+### JK flipflop
 
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-
-
-
+![jk waveform](https://github.com/vasundrasriravi/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393983/682270f8-d317-4207-88d8-e573f6878864)
 
 
 
 ### RESULTS 
+Thus the flipflops circuits are designed and the truth tables is verified using quartus software.
