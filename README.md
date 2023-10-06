@@ -125,6 +125,7 @@ Developed by:VASUNDRA SRI R
 RegisterNumber:212222230168
 ```
 ### SR flipflop
+```
 module flipflop(s,r,q,qbar,clk);
 input s,r,clk;
 output reg q,qbar;
@@ -136,7 +137,6 @@ q=s|(q&(~r));
 qbar=r|(qbar&(~s));
 end 
 endmodule
-```
 ```
 ### JK flipflop
 ```
@@ -151,8 +151,6 @@ qbar=((~j)&q)|(k &(~q));
 end 
 endmodule
 ```
-
-
 ### RTL LOGIC FOR FLIPFLOPS 
 ### SR flipflop
 
